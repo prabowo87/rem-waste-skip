@@ -1,0 +1,74 @@
+.container {
+  flex: 1; display: flex; flex-direction: column;
+  padding: 1rem; max-width: 1200px; margin: auto;
+}
+.header { text-align: center; margin-bottom: 1rem; }
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1rem;
+}
+.card {
+  position: relative; background: var(--card-bg);
+  border: 2px solid var(--card-border);
+  border-radius: 8px; overflow: hidden;
+  display: flex; flex-direction: column;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.card:focus, .card:hover {
+  border-color: var(--primary);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+.selected {
+  border-color: var(--primary);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+.img { width: 100%; aspect-ratio: 16/9; object-fit: cover; }
+.tag {
+  position: absolute; top: 0.5rem; right: 0.5rem;
+  background: var(--primary); color: white;
+  padding: 0.25rem 0.5rem; border-radius: 4px;
+  font-size: 0.875rem; font-weight: bold;
+}
+.info { padding: 0.75rem; flex: 1; }
+.price {
+  margin-top: 0.5rem; font-size: 1.25rem;
+  font-weight: bold; color: var(--primary);
+}
+.btnWrap {
+  padding: 0.75rem;
+  text-align: center;
+}
+.button {
+  background: var(--button-bg); color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+}
+.footer {
+  position: sticky; bottom: 0; left: 0; right: 0;
+  background: white; padding: 0.75rem 1rem;
+  display: flex; justify-content: space-between;
+  align-items: center; border-top: 1px solid #e0e0e0;
+}
+.footerInfo { display: flex; flex-direction: column; gap: 0.25rem; }
+.continueBtn {
+  background: var(--primary); color: white;
+  padding: 0.75rem 1.5rem; border: none;
+  border-radius: 4px; font-size: 1rem;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --card-bg: #1f1f1f;
+    --card-border: #333;
+    --primary: #1e88e5;
+    --button-bg: #1e88e5;
+  }
+}  
+@media (prefers-color-scheme: light) {
+  :root {
+    --card-bg: #fff;
+    --card-border: #ccc;
+    --primary: #1e88e5;
+    --button-bg: #1e88e5;
+  }
+}
