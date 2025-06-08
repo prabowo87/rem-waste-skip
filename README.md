@@ -1,4 +1,4 @@
-# Skip Selector Redesign
+# REM-Waste Redesign
 
 This is a complete redesign of the skip selection page using React + Vite + TailwindCSS.
 
